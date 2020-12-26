@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 15em auto 15em;
+            gap: 1em;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFAFA;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .left {
+            grid-column: 1/2;
+            position: fixed;
+            
+        }
+        .content-feed {
+            grid-column: 2/5;
+        }
+        .right {
+            grid-column: 5/6;
+            
+        }
+        .logo {
+            width: 40px;
+            margin-left: .7em;
+        }
+        .logo img {
+            width: 100%;
+        }
+        .left-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+
+        .left-bar {
+            background-color: #fff;
+            box-shadow: 0px 5px 10px rgba(255, 207, 198, .3), 0px 15px 10px rgba(255, 207, 198, .1);
+            padding: 1em;
+            border-radius: 0 15px 15px 0;
+            height: 65vh;
+            position: relative;
+        } 
+        .left-bar header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+        }
+        .left-bar header h4 {
+            font-size: .8rem;
+            
+        }
+        .left-bar header p {
+            color: #FECEC1;
+            font-weight: 700;
+            font-size: .8rem;
+        }
+        .next-cont {
+            position: absolute;
+            top: 23.5em;
+            left: 15%;
+            width: 12.5vw;
+        }
+        .next-cont img {
+            width: 100%;
+        }
+        .box-categories {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sub-title {
+            width: 5em;
+            margin-right: 4.2em;
+        }
+        .box-categories p {
+            font-weight: 700;
+            font-size: .9rem;
+        }
+        .box-categories span {
+            display: block;
+            font-size: .6rem;
+            font-weight: 700;
+            opacity: 0.3;
+            text-align: left;
+        }
+        .box-categories {
+            margin-bottom: 1em;
+            width: 13em;
+        }
+        
+        .home {
+            position: relative;
+        }
+        .home::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2.4px;
+            top: 1.7em;
+            background-color: #FECEC1;
+
+        }
+
+        .center-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .3em;
+            margin-top: .3em;
+        }
+        .center-nav h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .i-feed {
+            display: flex;
+            align-items: center;
+        }
+
+        .i-feed img {
+            width: 1.5em;    
+        }
+        .i-feed button {
+            background-color: #FF7B77;
+            border: none;
+            height: 2.5em;
+            width: 9em;
+            border-radius: 100px;
+            color: white;
+            font-weight: 600;
+            margin: 0 1em 0 1em;
+        }
+        .post {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5em;
+            margin-bottom: 1em;
+        }
+        .people-feed {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .scene {
+            width: 100%;
+            height: auto;
+            margin-top: -.8em;
+            line-height: .2em;
+            margin-left: 1em;
+        }
+        .scene h5 {
+            font-size: 1rem;
+        }
+        .scene p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .tags {
+            display: flex;
+        }
+        .tags button {
+            border-radius: 100px;
+            border: none;
+            font-size: .9rem;
+            height: 2em;
+            width: 6em;
+            margin-left: .4em;
+            color: white;
+            font-weight: 600;
+        }
+
+        .yellow {
+            background-color: #FFA84F;
+        }
+        .green {
+            background-color: #7AC133;
+        }
+        .blue {
+            background-color: #7C72F9;
+        }
+        .viral {
+            display: flex;
+            align-items: center;
+        }
+        .border {
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 15px;
+            margin-left: 1.5em; 
+        }
+        .scene {
+            margin-right: 2em;
+        }
+        .scene iframe {
+            border-radius: 15px;
+            width: 20em;
+            height: 13em;
+        }
+        .feed-reaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+        }
+        .feedback {
+            margin-left: 1em;
+        }
+        .content {
+            border-radius: 15px;
+            margin-bottom: 3em;
+            padding: 1em;
+            box-shadow: 0px 5px 4px rgba(255, 207, 198, .3), 0px 20px 6px rgba(255, 207, 198, .1);
+        }
+        .right-nav {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bg-pink {
+            border-radius: 15px;
+            background-color: #FFEDEA;
+            margin: 0 1em 0 1em;
+            height: auto;
+            
+        }
+        .bg-white {
+            background-color: white;
+            box-shadow: 0px 5px 4px rgba(255, 207, 198, .3), 0px 20px 6px rgba(255, 207, 198, .1);
+            border-radius: 15px;
+            width: 15em;
+            padding: 1em .8em;
+            margin: 1.5em auto;
+
+        }
+        .post-popular {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }        
+        .post-popular h5 {
+            font-size: .8rem;
+        }
+        .bg-white p {
+            opacity: 0.3;
+            font-size: .9rem;
+        }
+        .friend-sugestion {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+            justify-content: space-between;
+        }
+        .friend-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+        }
+        .friend-name .info {
+            line-height: .1em;
+            display: flex;
+        }
+        .friend-name .info {
+            font-weight: 600;
+        }
+        .friend-name .info h5 {
+            font-size: .9rem;
+        }
+        .friend-name .info p {
+            font-size: .8rem;
+            opacity: 0.5;
+        }
+        .name {
+            margin-left: 1em;
+        }
+        .friend-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .friend-title p {
+            font-weight: 700;
+            font-size: .9rem;
+            color: #FF7B77;
+        }
+    </style>
+</head>
+<body>
+    <section class="sect left">
+        <nav class="left-nav">
+            <div class="logo">
+                <img src="./logo-1.jpeg" alt="">
+            </div>
+            <div class="home">
+                <img src="https://s.svgbox.net/hero-outline.svg?ic=home&fill=000000" width="25" height="25">
+            </div>
+        </nav>
+        <div class="left-bar">
+            <header>
+                <h4>TOP CATEGORIES</h4>
+                <p>ALL</p>
+            </header>
+            <div class="box-categories">
+                <div class="image-categories">
+                    <img src="./politic.svg" alt="">
+                </div>
+                <div class="sub-title">
+                    <p>politics<span> 59 post</span></p>
+                </div>
+
+            </div>
+            <div class="box-categories">
+                <div class="image-categories">
+                    <img src="./sport.svg" alt="">
+                </div>
+                <div class="sub-title">
+                    <p>sport<span> 129 post</span></p>
+                </div>
+
+            </div>
+            <div class="box-categories">
+                <div class="image-categories">
+                    <img src="./game.svg" alt="">
+                </div>
+                <div class="sub-title">
+                    <p>game<span> 33 post</span></p>
+                </div>
+
+            </div>
+            <div class="box-categories">
+                <div class="image-categories">
+                    <img src="./tvshow.svg" alt="">
+                </div>
+                <div class="sub-title">
+                    <p>Tv Show<span> 237 post</span></p>
+                </div>
+
+            </div>
+            <img class="next-cont" src="./banner.svg" alt="">
+        </div>
+    </section>
+    <main class="content-feed">
+        <nav class="center-nav">
+            <h2>Main Stream</h2>
+            <div class="i-feed">
+                <img src="https://s.svgbox.net/hero-outline.svg?ic=search&fill=000000" width="32" height="32">
+                <button class="btn-feed">Create Scene</button>
+            </div>
+        </nav>
+        <article class="content">
+            <div class="post">
+                <div class="people-feed">
+                    <img src="./zidane.svg" alt="">
+                    <div class="scene">
+                        <h5>zidane</h5>
+                        <p>Aku ada dimana yak ?</p>
+                        <div class="tags">
+                            <button class="blue">Meme</button>
+                            <button class="yellow">Funny</button>
+                            <button class="green">Viral</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="viral">
+                    <img src="./upArrow.svg" alt="">
+                    <span>172</span>
+                    <img src="./downArrow.svg" alt="">
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./mark.svg" alt="">
+                    <div class="scene">
+                        <h5>Mark</h5>
+                        <p>planet namek bro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./zidane.svg" alt="">
+                    <div class="scene">
+                        <h5>zidane</h5>
+                        <p>meme harian :v</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sE_LolF2ZvY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./mark.svg" alt="">
+                    <div class="scene">
+                        <h5>Mark</h5>
+                        <p>garing coo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feed-reaction">
+                <div class="feedback">
+                    <img src="./share.svg" alt="">
+                    <img src="./replay.svg" alt="">
+                    
+                </div>
+                <div class="reaction">
+                    <img src="./heart.svg" alt="">
+                    <img src="./save.svg" alt="">
+                </div>
+            </div>
+        </article>
+        <article class="content">
+            <div class="post">
+                <div class="people-feed">
+                    <img src="./zidane.svg" alt="">
+                    <div class="scene">
+                        <h5>zidane</h5>
+                        <p>Aku ada dimana yak ?</p>
+                        <div class="tags">
+                            <button class="blue">Meme</button>
+                            <button class="yellow">Funny</button>
+                            <button class="green">Viral</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="viral">
+                    <img src="./upArrow.svg" alt="">
+                    <span>172</span>
+                    <img src="./downArrow.svg" alt="">
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./mark.svg" alt="">
+                    <div class="scene">
+                        <h5>Mark</h5>
+                        <p>planet namek bro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./zidane.svg" alt="">
+                    <div class="scene">
+                        <h5>zidane</h5>
+                        <p>meme harian :v</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sE_LolF2ZvY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="post border">
+                <div class="people-feed">
+                    <img src="./mark.svg" alt="">
+                    <div class="scene">
+                        <h5>Mark</h5>
+                        <p>garing coo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feed-reaction">
+                <div class="feedback">
+                    <img src="./share.svg" alt="">
+                    <img src="./replay.svg" alt="">
+                    
+                </div>
+                <div class="reaction">
+                    <img src="./heart.svg" alt="">
+                    <img src="./save.svg" alt="">
+                </div>
+            </div>
+        </article>
+    </main>
+    <section class="sect right">
+        <nav class="right-nav">
+            <img src="./notification.svg" alt="">
+            <img src="./user.svg" alt="">
+        </nav>
+        <div class="left-bar bg-pink">
+            <header>
+                <h4>POPULAR POST</h4>
+                <p>MORE</p>
+            </header>
+            <div class="bg-white">
+                <div class="post-popular">
+                    <img src="./news-1.svg" alt="">
+                    <h5>vaccine doses in its possession now. What's next?</h5>
+                </div>
+                <p>JAKARTA: Indonesia has received 1.2 million doses of COVID-19 vaccine from China’s Sinovac Biotech on Dec 6</p>
+
+            </div>
+            <div class="bg-white">
+                <div class="post-popular">
+                    <img src="./news-2.svg" alt="">
+                    <h5>Tourism Ministry prepares ‘Book Now, Travel Later’ recovery scheme</h5>
+                </div>
+                <p>The Tourism and Creative Economy Ministry is preparing a program it calls “Book Now, Travel Later” to support the recovery of tourism and creative industries in the country. </p>
+
+            </div>
+            <div class="bg-white">
+                <div class="post-popular">
+                    <img src="./news-3.svg" alt="">
+                    <h5>Indonesia's President Joko Widodo to get nation's first coronavirus vaccine...
+                    </h5>
+                </div>
+                <p>Indonesia's President Joko Widodo will get the country's first shot of the coronavirus vaccine.</p>
+            </div>
+            <div class="friend-sugestion">
+                <div class="friend-title">
+                    <h5>FRIEND SUGESTION</h5>
+                    <p>ALL</p>
+                </div>
+                <div class="friend-name">
+                    
+                    <div class="info">
+                        <img src="./friend-1.svg" alt="">
+                        <div class="name">
+                            <h5>albert</h5>
+                        <p>@alberJR_</p>
+                        </div>
+                        
+                    </div>
+                    <img src="./add.svg" alt="">
+                </div>
+                
+            </div>
+            <div class="friend-sugestion">
+                
+                <div class="friend-name">
+                    
+                    <div class="info">
+                        <img src="./friend-2.svg" alt="">
+                        <div class="name">
+                            <h5>dodo</h5>
+                        <p>@Dodo12</p>
+                        </div>
+                        
+                    </div>
+                    <img src="./add.svg" alt="">
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+    
+</body>
+</html>
